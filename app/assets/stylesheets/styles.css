@@ -1,0 +1,10 @@
+.logo a {
+font-size: 35px;
+}
+
+p.description {
+  border: 2px solid grey;
+  padding: 20px;
+  font-size: 15px;
+}
+

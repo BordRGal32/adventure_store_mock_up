@@ -1,0 +1,7 @@
+<h1><%= @adventure.title %><h1>
+
+  <p class="description"><%= @adventure.description %></p>
+<div class="row">
+  <%= link_to "Edit Adventure", edit_adventure_path(@adventure), :class => "btn btn-info" %>
+  <%= link_to "Delete Adventure", adventure_path(@adventure), data: { confirm: "are you sure?", method: "delete" }, :class => 'btn btn-info'  %>
+</div>
