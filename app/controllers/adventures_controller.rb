@@ -12,7 +12,7 @@ class AdventuresController < ApplicationController
   def create
     @adventure = Adventure.new(adventure_params)
     if @adventure.save
-      redirect_to :action => :show
+      redirect_to adventure_path(@adventure)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class AdventuresController < ApplicationController
   def update
     @adventure = Adventure.find(params[:id])
     if @adventure.update(adventure_params)
-      redirect_to :action => :show
+      redirect_to adventure_path(@adventure)
     else
       render :edit
     end
@@ -37,6 +37,6 @@ class AdventuresController < ApplicationController
   end
   private
   def adventure_params
-    params.require(:adventure).permit(:title, :description, :state, :category, :price)
+    params.require(:adventure).permit(:title, :description, :state, :category, :price, :photos)
   end
 end

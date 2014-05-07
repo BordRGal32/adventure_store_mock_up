@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507174011) do
+ActiveRecord::Schema.define(version: 20140507181930) do
 
   create_table "adventures", force: true do |t|
     t.string   "title"
     t.string   "state"
-    t.decimal  "price",       precision: 5, scale: 2
+    t.decimal  "price",              precision: 5, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
     t.text     "description"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: true do |t|

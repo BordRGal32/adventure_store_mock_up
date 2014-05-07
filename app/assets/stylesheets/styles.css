@@ -8,3 +8,17 @@ p.description {
   font-size: 15px;
 }
 
+.btn {
+  margin: 10px;
+}
+
+.file-upload {
+  border: 2px white;
+  margin: 15px;
+  padding: 10px;
+
+}
+
+.panel {
+  border: 1px solid grey;
+}

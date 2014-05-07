@@ -1,17 +1,23 @@
 <h1>Go ADVENTURE</h1>
 
 
-
-<% @adventures.each do |adventure| %>
-  <div class="panel panel-dfault">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= link_to adventure.title, adventure_path(adventure) %></h3>
+<div class="row">
+ <% @adventures.each do |adventure| %>
+    <div class="panel panel-dfault">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= link_to adventure.title, adventure_path(adventure) %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-sm-10">
+          <p><%= adventure.description %></p>
+        </div>
+        <div class="col-sm-2">
+          <p><%= image_tag adventure.photo.url(:thumb)%></p>
+        </div>
+      </div>
     </div>
-    <div class="panel-body">
-      <p><%= adventure.description %></p>
-    </div>
-    </div>
-<% end %>
+  <% end %>
+</div>
 
 <%= link_to "Add A New Adventure", new_adventure_path, :class => "bnt btn-info" %>
 
