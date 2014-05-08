@@ -22,3 +22,10 @@ p.description {
 .panel {
   border: 1px solid grey;
 }
+h1 {
+  text-align: center;
+}
+.search_fields {
+  text-align: center;
+}
+

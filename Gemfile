@@ -14,6 +14,7 @@ gem 'bcrypt'
 gem 'faker'
 gem 'smarter_csv'
 gem 'devise'
+gem 'will_paginate', '~> 3.0'
 
 group :development do
   gem 'better_errors'

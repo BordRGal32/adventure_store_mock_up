@@ -1,6 +1,7 @@
 module ApplicationHelper
   def adventure_categories
     [
+      ['none', 'false'],
       ['Climbing'],
       ['Hiking'],
       ['Swimming'],
@@ -18,11 +19,13 @@ module ApplicationHelper
       ['Surfing'],
       ['Other']
 
+
     ]
   end
 
   def us_states
    [
+    ['none', 'false'],
     ['Alabama', 'AL'],
     ['Alaska', 'AK'],
     ['Arizona', 'AZ'],
@@ -75,6 +78,7 @@ module ApplicationHelper
     ['West Virginia', 'WV'],
     ['Wisconsin', 'WI'],
     ['Wyoming', 'WY']
+
   ]
 
 end

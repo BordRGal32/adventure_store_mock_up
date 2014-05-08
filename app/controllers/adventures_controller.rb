@@ -1,6 +1,11 @@
 class AdventuresController < ApplicationController
   def index
-    @adventures = Adventure.all
+
+    if params[:search_states] && params[:search_category]
+    @adventures = Adventure.search_model(params[:search_states,], params[:search_category]).paginate(:page => params[:page], :per_page => 5)
+    else
+      @adventures = Adventure.all.paginate(:page => params[:page], :per_page => 5)
+    end
   end
   def show
     @adventure = Adventure.find(params[:id])
@@ -37,6 +42,6 @@ class AdventuresController < ApplicationController
   end
   private
   def adventure_params
-    params.require(:adventure).permit(:title, :description, :state, :category, :price, :photos)
+    params.require(:adventure).permit(:title, :description, :state, :category, :price, :photo)
   end
 end

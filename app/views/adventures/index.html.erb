@@ -1,6 +1,13 @@
-<h1>Go ADVENTURE</h1>
-
-
+<h1>GO ADVENTURE</h1>
+<hr>
+<div class="row search_fields">
+  <%= form_tag adventures_path, :method => 'get' do %>
+    <%= select_tag :search_states, options_for_select(us_states) %>
+    <%= select_tag :search_category, options_for_select(adventure_categories) %>
+    <%= submit_tag "Search", :name => nil, :class => "btn btn-info pull-right" %>
+  <% end %>
+</div>
+<hr>
 <div class="row">
  <% @adventures.each do |adventure| %>
     <div class="panel panel-dfault">
@@ -21,4 +28,7 @@
 
 <%= link_to "Add A New Adventure", new_adventure_path, :class => "bnt btn-info" %>
 
+<div class="row pull-right">
+<%= will_paginate @adventures %>
+</div>
 

@@ -6,4 +6,26 @@ class Adventure < ActiveRecord::Base
    validates_attachment_content_type :photo,
                                     :content_type => /^image\/(png|gif|jpeg)/,
                                     :message => 'only (png/gif/jpeg) images'
+
+  def self.search_model(target_state,target_category)
+
+    if target_state != 'false' && target_category == 'false'
+      where('state = ?', target_state)
+    elsif target_category != 'false' && target_state == 'false'
+      where('category = ?', target_category)
+    elsif target_state != 'false' && target_category != 'false'
+      where('state = ? AND category = ?', target_state, target_category)
+    else
+      scoped
+    end
+    # if target_state && target_category
+    #   where('state = ? AND category = ?', target_state, target_category)
+    # elsif target_state
+    #   where('state = ?', target_state)
+    # elsif target_category
+    #   where('category = ?', target_category)
+    # else
+    #   scoped
+    # end
+  end
 end
