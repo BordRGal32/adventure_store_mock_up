@@ -24,6 +24,7 @@
   <div class="col-md-2">
     <% if current_user %>
       <%= link_to "Add Review", new_adventure_review_path(@adventure), :remote => true, :id => "new_review", :class => "btn btn-info"  %>
+      <%= link_to "Go On Adventure", purchase_adventure_path(@adventure), :class => 'btn btn-primary'%>
     <% end %>
   </div>
 </div>

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Adventure do
+  it { should have_and_belong_to_many :users}
   it { should validate_presence_of :title }
   it { should validate_presence_of :description }
   it { should validate_presence_of :price }

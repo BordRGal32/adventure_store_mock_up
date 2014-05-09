@@ -3,6 +3,7 @@ class Adventure < ActiveRecord::Base
   validates :description, presence: true
   validates :price, presence: true
   has_many :reviews
+  has_and_belongs_to_many :users
   has_attached_file :photo, :styles => { :medium => "300x300", :thumb => "100x100"}
    validates_attachment_content_type :photo,
                                     :content_type => /^image\/(png|gif|jpeg)/,

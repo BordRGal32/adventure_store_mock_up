@@ -42,6 +42,10 @@ class AdventuresController < ApplicationController
     @adventure.destroy
     redirect_to :action => :index
   end
+  def purchase
+    @adventure = Adventure.find(params[:id])
+    @adventure.users << current_user
+  end
   private
   def adventure_params
     params.require(:adventure).permit(:title, :description, :state, :category, :price, :photo)
