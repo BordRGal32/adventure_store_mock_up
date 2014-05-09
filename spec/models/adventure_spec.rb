@@ -4,6 +4,7 @@ describe Adventure do
   it { should validate_presence_of :title }
   it { should validate_presence_of :description }
   it { should validate_presence_of :price }
+  it { should have_many :reviews }
 
   describe '.search_model' do
     it 'should query the db by the state and category parameters selected by the user' do

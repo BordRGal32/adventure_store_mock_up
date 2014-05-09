@@ -1,0 +1,14 @@
+<%= render('layouts/errors', :object => @review ) %>
+
+<div id="new_review_form">
+  <%= form_for [@adventure, @review], :remote => true do |f| %>
+    <div class="form-group">
+      <%= f.select :rating, stars %>
+    </div>
+    <div class="form-group">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, :size => "60x12", :class => "form-control" %>
+    </div>
+    <%= f.submit :class => "btn btn-info" %>
+  <% end %>
+</div>

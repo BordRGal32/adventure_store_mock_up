@@ -2,13 +2,29 @@
 <div class="row">
   <div class="col-md-8">
   <p class="description"><%= @adventure.description %></p>
+  <p class = "pull-left">Only $<%= @adventure.price %>!</p>
   </div>
   <div class="col-md-4">
     <p><%= image_tag @adventure.photo.url(:medium) %></p>
   </div>
 </div>
 
+<hr>
+<h2>Reviews</h2>
 <div class="row">
-  <%= link_to "Edit Adventure", edit_adventure_path(@adventure), :class => "btn btn-info" %>
-  <%= link_to "Delete Adventure", adventure_path(@adventure), data: { confirm: "are you sure?", method: "delete" }, :class => 'btn btn-info'  %>
+  <div class="col-md-6">
+    <ul id="show-reviews">
+
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <%= link_to "Add Review", new_adventure_review_path(@adventure), :remote => true, :id => "new_review", :class => "btn btn-info"  %>
+  </div>
 </div>
+
+<nav class="navbar navbar-fixed-bottom center" role="navigation">
+  <div class="navbar-inner">
+    <%= link_to "Edit Adventure", edit_adventure_path(@adventure), :class => "navbar-text pull-right"%>
+    <%= link_to "Delete Adventure", adventure_path(@adventure), data: { confirm: "are you sure?", method: "delete" }, :class => 'navbar-text pull-right'%>
+  </div>
+</nav>

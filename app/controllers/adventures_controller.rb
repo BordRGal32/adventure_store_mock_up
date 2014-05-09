@@ -8,6 +8,8 @@ class AdventuresController < ApplicationController
     end
   end
   def show
+    @review = Review.new
+
     @adventure = Adventure.find(params[:id])
   end
   def new

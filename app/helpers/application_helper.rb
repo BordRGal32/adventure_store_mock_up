@@ -1,7 +1,16 @@
 module ApplicationHelper
+  def stars
+    [
+      ["*", 1],
+      ["**", 2],
+      ["***", 3],
+      ["****", 4],
+      ["*****", 5]
+    ]
+  end
   def adventure_categories
     [
-      ['none', 'false'],
+      ['Any Category', 'false'],
       ['Climbing'],
       ['Hiking'],
       ['Swimming'],
@@ -25,7 +34,7 @@ module ApplicationHelper
 
   def us_states
    [
-    ['none', 'false'],
+    ['Any State', 'false'],
     ['Alabama', 'AL'],
     ['Alaska', 'AK'],
     ['Arizona', 'AZ'],
