@@ -26,7 +26,9 @@
   <% end %>
 </div>
 
-<%= link_to "Add A New Adventure", new_adventure_path, :class => "bnt btn-info" %>
+<% if current_user %>
+  <%= link_to "Add A New Adventure", new_adventure_path, :class => "bnt btn-info" %>
+<% end %>
 
 <div class="row pull-right">
 <%= will_paginate @adventures %>
