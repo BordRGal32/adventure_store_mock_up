@@ -1,9 +1,11 @@
-[+] as a user I want to be able to create an account sign in and log out.
+This project was intended as a quick exorcise to compare using MYSQL over Postgres. 
 
-[+] as a user I want to be able to add a new adventure.
+As a user I want to be able to create an account sign in and log out.
 
-[+] as a user I want to be able to search for an adventure by category and location.
+As a user I want to be able to add a new adventure.
 
-[+] as a user I want to be able to leave a review of an adventure.
+As a user I want to be able to search for an adventure by category and location.
 
-[+] as a user I want to be able to 'purchase' or 'go on an adventure'
+As a user I want to be able to leave a review of an adventure.
+
+As a user I want to be able to 'purchase' or 'go on an adventure'
